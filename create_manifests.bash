@@ -23,7 +23,7 @@ output_to_manifest() {
   images=($@)
   for img_path in "${images[@]}"; do
     img_name="${img_path##*/}"
-    text="{\"source-ref\":\"s3://$bucket_name/$label/$img_name\",\"anomaly-label\":$label,\"anomaly-label-metadata\":{\"confidence\":1,\"class-name\":\"$class\",\"human-annotated\":\"yes\",\"creation-date\":\"2021-04-06T19:18:44.208156\",\"type\":\"groundtruth/image-classification\"}}"
+    text="{\"source-ref\":\"s3://$bucket_name/$label/$img_name\",\"anomaly-label\":$class,\"anomaly-label-metadata\":{\"confidence\":1,\"class-name\":\"$label\",\"human-annotated\":\"yes\",\"creation-date\":\"2021-04-06T19:18:44.208156\",\"type\":\"groundtruth/image-classification\"}}"
     echo "$text" >> "$manifest_file"
   done
 }
