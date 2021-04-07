@@ -49,7 +49,7 @@ main() {
   echo "$FUNCNAME: Creating $1 directory ..."
   mkdir -p "$1" && echo "OK."
   copy_images "$3" "$1/normal" $PCT_OF_FILES_TO_USE
-  copy_images "$4" "$1/defects" $PCT_OF_FILES_TO_USE
+  copy_images "$4" "$1/anomaly" $PCT_OF_FILES_TO_USE
 }
 
 main "$DEST_DIR" "$PCT_OF_FILES_TO_USE" "$NORMAL_IMAGES_DIR" "$DEFECTS_IMAGES_DIR"
